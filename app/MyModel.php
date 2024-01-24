@@ -6,11 +6,48 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Yajra\DataTables\Facades\DataTables;
 use Stevebauman\Purify\Facades\Purify;
+use Illuminate\Support\Facades\Storage;
 
 class MyModel extends Model
 {
     protected $prefix = 'URUT';
     public $useAlias = false;
+
+    public function uploadFile($fileName, $uploadPath, $allowedFile = ['jpg', 'png'])
+    {
+        // Pengecekan apakah path folder tersedia
+        if (!Storage::exists($uploadPath)) {
+            // Jika tidak tersedia, maka membuat direktori
+            Storage::makeDirectory($uploadPath);
+            
+            if (!Storage::exists($uploadPath)) {
+                return ['status' => false, 'message' => 'folder untuk upload tidak tersedia.'];
+            }
+        }
+
+        // Pengecekan apakah folder writable
+        if (!is_writable(Storage::path($uploadPath))) {
+            return ['status' => false, 'message' => 'folder untuk upload tidak dapat dimodifikasi.'];
+        }
+
+        if (request()->hasFile($fileName) && request()->file($fileName)->isValid()) {
+            $file = request()->file($fileName);
+
+            // Periksa apakah tipe file diizinkan
+            if (!empty($allowedFile) && !in_array($file->extension(), $allowedFile)) {
+                return ['status' => false, 'message' => 'extensi file tidak didukung.'];
+            }
+
+            // Generate nama unik untuk file
+            $uniqueFileName = uniqid() . '_' . time() . '.' . $file->extension();
+
+            // Simpan file ke direktori yang ditentukan
+            if ($file->storeAs($uploadPath, $uniqueFileName)) {
+                return ['status' => true, 'message' => 'berhasil mengupload file.', 'data' => $uniqueFileName];
+            }
+        }
+        return ['status' => false, 'message' => 'gagal mengupload file.'];
+    }
 
     public function getAliases($column = null)
     {
@@ -210,15 +247,15 @@ class MyModel extends Model
         }
     }
 
-    public function getRows($params = null)
+    public function getRows($params = null, $result_array = false)
     {
         $datatable1 = (
             isset($params['draw']) &&
             isset($params['start']) &&
             isset($params['length'])
         );
-        if($datatable1){
-            return $this->getDatatable($params);
+        if ($datatable1) {
+            return $this->getDatatable($params, $result_array);
         }
 
         $query = $this->newQuery();
@@ -429,6 +466,14 @@ class MyModel extends Model
         if (isset($params['praQuery'])) {
             $praQuery = $params['praQuery'];
             $query = $praQuery($query);
+        }
+
+        if (isset($params['limit'])) {
+            $query->limit($params['limit']);
+        }
+
+        if (isset($params['offset'])) {
+            $query->offset($params['offset']);
         }
 
         $data = $query->get();
@@ -888,7 +933,7 @@ class MyModel extends Model
 
     public function insertData($data = null)
     {
-        if($data==null){
+        if ($data == null) {
             $data = $this->attributes;
         }
         $data_cleaned = Purify::clean($data);
@@ -897,7 +942,7 @@ class MyModel extends Model
 
     public function updateData($data = null, $wheredata)
     {
-        if($data==null){
+        if ($data == null) {
             $data = $this->attributes;
         }
         $data_cleaned = Purify::clean($data);

@@ -22,18 +22,18 @@ class LoketController extends Controller
         return view('loket.index');
     }
 
-    public function xgetlistdata(Request $request)
-    {   
+    public function xgetListdata(Request $request)
+    {
         return $this->loket->getRows($request);
     }
 
-    public function store(Request $request){
-
-        $kode   =  $request->IDLoket; 
+    public function postStore(Request $request)
+    {
+        $kode   =  $request->IDLoket;
         $insertdata = request()->except(['_token']);
 
         $insertdata['IsAvailable'] = isset($insertdata['IsAvailable']) && $insertdata['IsAvailable'] > 0 ? 1 : 0;
-        if($kode == ''){
+        if ($kode == '') {
             ## tambah data
             $status = 'tambah data';
             $insertdata['IDLoket'] = $this->loket->createId('LOKET', 'IDLoket', 'mstloket');
@@ -45,16 +45,16 @@ class LoketController extends Controller
             $status = 'update data';
             $result = $this->loket->updateData($insertdata, ['IDLoket' => $kode]);
         }
-        
+
         if ($result) {
             echo json_encode([
                 'status' => true,
-                'msg'  => "Berhasil ".$status
+                'msg'  => "Berhasil " . $status
             ]);
         } else {
             echo json_encode([
                 'status' => false,
-                'msg'  => "Gagal ". $status
+                'msg'  => "Gagal " . $status
             ]);
         }
     }
@@ -63,7 +63,7 @@ class LoketController extends Controller
     {
         $IDLoket = base64_decode($kode);
         $result = $this->loket::where('IDLoket', $IDLoket)->delete();
-		if ($result) {
+        if ($result) {
             echo json_encode([
                 'status' => true,
                 'msg'  => "Berhasil Menghapus Data"
@@ -81,7 +81,7 @@ class LoketController extends Controller
         $IDLoket = base64_decode($kode);
         $IsAktif   = base64_decode($isaktif);
         $result = $this->loket->updateData(['IsAktif' => $IsAktif], ['IDLoket' => $IDLoket]);
-		if ($result) {
+        if ($result) {
             echo json_encode([
                 'status' => true,
                 'msg'  => ($IsAktif == 1 ? "Berhasil Mengaktifkan Data" : "Berhasil Menonaktifkan Data")
@@ -89,9 +89,8 @@ class LoketController extends Controller
         } else {
             echo json_encode([
                 'status' => false,
-                'msg'  =>  ($IsAktif == 1 ? "Gagal Mengaktifkan Data" : "Gagal Menonaktifkan Data")
+                'msg'  => ($IsAktif == 1 ? "Gagal Mengaktifkan Data" : "Gagal Menonaktifkan Data")
             ]);
         }
     }
-
 }

@@ -9,7 +9,7 @@
 <script src="{{ asset('assets/plugins/alertify/custom-alertify.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
@@ -24,6 +24,7 @@
 <script src="{{ asset('assets/js/form-validation.js') }}"></script>
 <script src="{{ asset('assets/js/script.js') }}"></script>
 <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
+<script src="{{ asset('assets/dropify/dist/js/dropify.min.js') }}"></script>
 <script>
     $('.single-select').select2({
         theme: 'bootstrap4',

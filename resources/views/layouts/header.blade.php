@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="{{ asset("assets/plugins/daterangepicker/daterangepicker.css") }}">
+<link rel="stylesheet" href="{{ asset("assets/dropify/dist/css/dropify.min.css") }}">
 <style>
     div.dt-buttons {
         position: relative;

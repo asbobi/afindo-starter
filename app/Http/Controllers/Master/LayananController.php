@@ -23,8 +23,12 @@ class LayananController extends Controller
         return view('layanan.index');
     }
 
-    public function xgetlistdata(Request $request)
+    public function xgetListdata(Request $request)
     {   
+        if(isset($params['limit']) && isset($params['page'])){
+
+        }
+        
         return $this->layanan->getRows($request);
     }
 
@@ -38,7 +42,7 @@ class LayananController extends Controller
         return view('layanan.form', $x);
     }
 
-    public function store(Request $request)
+    public function postStore(Request $request)
     {
         $kode   =  $request->IDLayanan; 
         $insertdata = request()->except(['_token']);
