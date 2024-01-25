@@ -22,8 +22,8 @@ To get started with a new project using this template, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/laravel-project-template.git
-
+   git clone https://github.com/afindo/template-web.git
+   
 2. Install dependencies:
    ```bash
    composer install
