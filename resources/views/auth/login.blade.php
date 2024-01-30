@@ -91,12 +91,12 @@
                                 <div class="login-right-wrap">
                                     <div style="display: flex;">
                                         <div class="logo-section">
-                                            <img src="{{ asset('assets/img/logo-jombang.png') }}" width="40px" />
+                                            <img src="{{ asset('assets/img/afindo.png') }}" width="40px" />
                                         </div>
                                         <div class="text-section">
-                                            <p class="p-0 m-0">Sistem Antrian Layanan</p>
-                                            <h2 class="p-0 m-0">Badan Pendapatan Daerah</h2>
-                                            <p class="p-0 m-0">Kabupaten Jombang</p>
+                                            <p class="p-0 m-0">Sistem KMZWA8AWAA</p>
+                                            <h2 class="p-0 m-0">KMZWA8AWAA</h2>
+                                            <p class="p-0 m-0">Kabupaten KMZWA8AWAA</p>
                                         </div>
                                     </div>
                                     <br>

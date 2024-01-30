@@ -21,15 +21,15 @@
         <a href="{{ route('home') }}" class="logo">
             <div style="display: flex;">
                 <div class="logo-section">
-                    <img src="{{ asset('assets/img/logo-jombang.png') }}" width="40" alt="Logo">
+                    <img src="{{ asset('assets/img/afindo.png') }}" width="40" alt="Logo">
                 </div>
                 <div class="text-section">
-                    <h4>BAPENDA</h4>
+                    <h4>KMZWA8AWAA</h4>
                 </div>
             </div>
         </a>
         <a href="{{ route('home') }}" class="logo logo-small" style="margin-left: 10px;">
-            <img src="{{ asset('assets/img/logo-jombang.png') }}" alt="Logo" width="30" height="30">
+            <img src="{{ asset('assets/img/afindo.png') }}" alt="Logo" width="30" height="30">
         </a>
     </div>
     <!-- <div class="menu-toggle">
