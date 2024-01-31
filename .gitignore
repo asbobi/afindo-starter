@@ -1,14 +1,14 @@
-# IDE Files
-#-------------------------
-/nbproject/
-.idea/*
+/public/assets/img
+vendor
+.env
+# Created by https://www.toptal.com/developers/gitignore/api/laravel
+# Edit at https://www.toptal.com/developers/gitignore?templates=laravel
 
-## Sublime Text cache files
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
+### Laravel ###
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
 
 .github
 info.php
