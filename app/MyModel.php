@@ -890,7 +890,8 @@ class MyModel extends Model
         }
 
         if (isset($params['pre_datatable'])) {
-            $pre_action_datatable = $params['pre_datatable'];
+            $params['build_datatable'] = $params['pre_datatable'];
+            $pre_action_datatable = $params['build_datatable'];
             $datatable = $pre_action_datatable($datatable);
         }
 
