@@ -90,6 +90,11 @@
             width: '100%'
         });
     }
+    if ($('.select2').length > 0) {
+        $('.select2').select2({
+            width: '100%'
+        });
+    }
     if ($('#editor').length > 0) {
         ClassicEditor.create(document.querySelector('#editor'), {
             toolbar: {

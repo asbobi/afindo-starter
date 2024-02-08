@@ -6,12 +6,21 @@
 
 @section("content")
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 mb-30">
-                <div class="card">
-                    <div class="card-body">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 offset-md-8">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search here">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-30">
                         <div class="table-responsive" style="white-space:wrap!important">
-                            <table class="table  border-0 star-student table-hover table-center mb-0 table-striped yajra-datatable">
+                            <table
+                                class="table border-0 star-student table-hover table-center mb-0 table-striped yajra-datatable">
                                 <thead class="student-thread">
                                     <tr>
                                         <th style="width: 10%;" class="text-center">No.</th>
@@ -43,7 +52,7 @@
                 dom: 'lBfrtip',
                 searching: false,
                 ajax: {
-                    url: "{{ url('api/pengunjung') }}",
+                    url: "{{ url("api/pengunjung") }}",
                     data: function(d) {
                         d.search = $('input[type="search"]').val()
                     }
@@ -115,12 +124,12 @@
                     }, {
                         text: 'Tambah',
                         action: function(e, dt, node, config) {
-                            window.location.href = "{{ url('pengunjung/create') }}";
+                            window.location.href = "{{ url("pengunjung/create") }}";
                         }
                     }]
                 },
                 language: {
-                    url: "{{ asset('assets/js/language_id.json') }}",
+                    url: "{{ asset("assets/js/language_id.json") }}",
                 },
             });
 

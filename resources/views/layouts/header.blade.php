@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="{{ asset("assets/plugins/icons/flags/flags.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/plugins/fontawesome/css/fontawesome.min.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/plugins/fontawesome/css/all.min.css") }}">
+<link rel="stylesheet" href="{{ asset("assets/plugins/simpleline/simple-line-icons.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/plugins/alertify/alertify.min.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/plugins//toastr/toatr.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/plugins/datatables/datatables.min.css") }}">
@@ -35,6 +36,24 @@
     }
 
     .filter {
-        height : 45px!important;
+        height: 45px !important;
+    }
+
+    @media screen and (min-width: 768px) {
+
+        /* ketika screen width lebih dari 768px */
+        .dt-buttons {
+            margin-top: -40px;
+        }
+
+        div.dataTables_wrapper div.dataTables_paginate {
+            margin-top: -46px;
+            white-space: nowrap;
+            text-align: right;
+        }
+    }
+
+    #input-search {
+        height: 45px;
     }
 </style>
