@@ -54,8 +54,9 @@ class KunjunganController extends Controller
         if ($IDLayanan != '') $wheredata[] = ["tr.IDLayanan" => $IDLayanan];
 
         $request['select'] = 'tr.IDKunjungan, tr.TanggalJam, tr.JamDilayani, tr.NoAntrian, tr.StatusAntrian, tr.IDLoket, tr.UserName, tr.IDUser, tr.NilaiSPM, tr.IDLayanan, ml.NamaLayanan, lkt.NamaLoket, mp.NIK, mp.NamaLengkap';
-        $request['from']   = 'trkunjungan AS tr';
-        $request['where']  = $wheredata;
+        $request['from'] = 'trkunjungan AS tr';
+        $request['where'] = $wheredata;
+        $request['order_by'] = 'CAST(tr.NoAntrian AS UNSIGNED) ASC';
         $request['join'] = [
             [
                 'table' => 'mstlayanan AS ml',

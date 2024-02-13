@@ -12,8 +12,8 @@
     "paginate": {
         "first": "Pertama",
         "last": "Terakhir",
-        "next": "Selanjutnya",
-        "previous": "Sebelumnya"
+        "next": "<i class='fa fa-chevron-right'></i>",
+        "previous": "<i class='fa fa-chevron-left'></i>"
     },
     "aria": {
         "sortAscending": ": aktifkan untuk mengurutkan kolom ke atas",

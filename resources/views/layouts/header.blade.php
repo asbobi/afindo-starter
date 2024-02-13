@@ -56,4 +56,50 @@
     #input-search {
         height: 45px;
     }
+
+    /* Gaya umum untuk pagination */
+    .dataTables_wrapper .dataTables_paginate {
+        float: right;
+        margin-top: 10px;
+    }
+
+    /* Gaya untuk setiap elemen pagination (angka dan tombol) */
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 0 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    /* Gaya untuk angka aktif */
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* Gaya untuk tombol "Next" dan "Previous" */
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background-color: #eee;
+    }
+
+    /* Gaya untuk angka tidak dapat diklik pada pagination */
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        pointer-events: none;
+        color: #ccc;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border: 0px solid #ccc;
+        border-radius: 10px;
+        margin: 3px;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    /* .page-item.active .page-link {
+        background-color: #3d5ee1;
+        border-color: #3d5ee1;
+        border-radius: inherit;
+    } */
 </style>

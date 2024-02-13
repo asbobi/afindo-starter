@@ -19,7 +19,7 @@ class MyModel extends Model
         if (!Storage::exists($uploadPath)) {
             // Jika tidak tersedia, maka membuat direktori
             Storage::makeDirectory($uploadPath);
-            
+
             if (!Storage::exists($uploadPath)) {
                 return ['status' => false, 'message' => 'folder untuk upload tidak tersedia.'];
             }
@@ -866,6 +866,16 @@ class MyModel extends Model
                 $query->groupBy($group);
             }
         }
+
+        if (isset($params['order_by'])) {
+            $order = $params['order_by'];
+            if (is_array($params['order_by'])) {
+                $query->orderBy($order[0], $order[1]);
+            } else {
+                $query->orderByRaw($order);
+            }
+        }
+
         // praQuery
         if (isset($params['praQuery'])) {
             $praQuery = $params['praQuery'];
@@ -893,7 +903,7 @@ class MyModel extends Model
             $params['build_datatable'] = $params['pre_datatable'];
         }
 
-        if(isset($params['build_datatable'])){
+        if (isset($params['build_datatable'])) {
             $build_action_datatable = $params['build_datatable'];
             $datatable = $build_action_datatable($datatable);
         }

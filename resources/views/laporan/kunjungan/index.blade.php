@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-lg-12 mb-30">
                         <div class="table-responsive" style="white-space:wrap!important">
-                            <table
+                            <table width="100%"
                                 class="table  border-0 star-student table-hover table-center mb-0 table-striped yajra-datatable">
                                 <thead class="student-thread">
                                     <tr>
@@ -149,13 +149,13 @@
                         extend: 'excelHtml5',
                         title: '{{ @$title }}',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7]
                         }
                     }, {
                         extend: 'pdfHtml5',
                         title: '{{ @$title }}',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5, 6]
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7]
                         },
                         customize: function(doc) {
                             doc.styles.tableHeader = {
