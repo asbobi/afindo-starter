@@ -23,7 +23,7 @@
                 $(this).next('ul').slideUp(350);
             }
         });
-        $('#sidebar-menu ul li.submenu a.active').parents('li:last').children('a:first').addClass('active').trigger('click');
+        //$('#sidebar-menu ul li.submenu a.active').parents('li:last').children('a:first').addClass('active').trigger('click');
     }
     init();
     $('body').append('<div class="sidebar-overlay"></div>');

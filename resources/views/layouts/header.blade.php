@@ -102,4 +102,18 @@
         border-color: #3d5ee1;
         border-radius: inherit;
     } */
+    .sidebar-menu li.active>a {
+        background-color: #fff;
+        color: #3d5ee1;
+        position: relative;
+        margin: 0 -15px;
+        padding-left: 30px;
+    }
+
+    .sidebar-menu>ul>li>a:hover {
+        background-color: #fff;
+        color: #3d5ee1;
+        margin: 0 -15px;
+        padding-left: 30px;
+    }
 </style>
