@@ -11,7 +11,7 @@
 @endforeach
 <div id="sidebar-menu" class="sidebar-menu">
     <ul>
-        @if ($jumlahmenu > 100)
+        @if ($jumlahmenu > 20)
             <li class="{{ request()->is("home") ? "active" : "" }}">
                 <a href="{{ route("home") }}"><i class="feather-home"></i> <span>Dashboard</span></a>
             </li>
@@ -65,7 +65,7 @@
                     @endforeach
                 @endif
             @endforeach
-        @elseh
+        @else
             <li class="menu-title">
                 <span>MAIN MENU</span>
             </li>
