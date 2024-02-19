@@ -876,6 +876,16 @@ class MyModel extends Model
                 $query->groupBy($group);
             }
         }
+
+        if (isset($params['order_by'])) {
+            $order = $params['order_by'];
+            if (is_array($params['order_by'])) {
+                $query->orderBy($order[0], $order[1]);
+            } else {
+                $query->orderByRaw($order);
+            }
+        }
+
         // praQuery
         if (isset($params['praQuery'])) {
             $praQuery = $params['praQuery'];

@@ -24,7 +24,7 @@
                     <img src="{{ asset('assets/img/afindo.png') }}" width="40" alt="Logo">
                 </div>
                 <div class="text-section">
-                    <h4>KMZWA8AWAA</h4>
+                    <h5>KMZWA8AWAA</h5>
                 </div>
             </div>
         </a>
@@ -32,11 +32,11 @@
             <img src="{{ asset('assets/img/afindo.png') }}" alt="Logo" width="30" height="30">
         </a>
     </div>
-    <!-- <div class="menu-toggle">
+    <div class="menu-toggle">
       <a href="javascript:void(0);" id="toggle_btn">
         <i class="fas fa-bars"></i>
       </a>
-    </div> -->
+    </div>
 
     <ul class="nav user-menu">
         <li class="nav-item dropdown has-arrow new-user-menus">
